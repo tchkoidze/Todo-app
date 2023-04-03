@@ -8,9 +8,22 @@
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
+
   height: 100%;
+}
+
+.light {
   background-color: #fafafa;
   background-image: url("./assets/images/bg-mobile-light.jpg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+.dark {
+  background-color: #171823;
+  background-image: url("./assets/images/bg-mobile-dark.jpg");
   background-repeat: no-repeat;
   background-position-x: center;
 }
