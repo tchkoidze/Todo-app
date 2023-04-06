@@ -1,0 +1,165 @@
+.todo-list-container {
+  /*color: #d1d2da;*/
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 5px;
+}
+
+.todo-list-container-light {
+  /*background: #ffffff;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);*/
+  color: #494c6b;
+}
+
+.todo-list-container-dark {
+  /*background: #25273d;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);*/
+  color: #c8cbe7;
+}
+
+.list-light {
+  background: #ffffff;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  color: #494c6b;
+}
+.list-dark {
+  background: #25273d;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  color: #c8cbe7;
+}
+
+.todo-list-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 20px 22px 20px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+
+.list-item-light {
+  border-bottom: 1px solid #e3e4f1;
+}
+
+.list-item-dark {
+  border-bottom: 1px solid #393a4b;
+}
+
+.completed-checker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.completed-checker:hover {
+  border-image: linear-gradient(#f6b73c, #4d9f0c) 30/2px;
+}
+
+.completed-checker-light {
+  border: 1px solid #e3e4f1;
+}
+
+.completed-checker-dark {
+  border: 1px solid #393a4b;
+}
+
+.todo-txt:hover {
+  cursor: pointer;
+}
+
+.list-info-btns-light {
+  color: #9495a5;
+}
+
+.list-info-btns-light:hover {
+  cursor: pointer;
+  color: #494c6b;
+}
+
+.list-info-btns-dark {
+  color: #5b5e7e;
+}
+
+.list-info-btns-dark:hover {
+  cursor: pointer;
+  color: #e3e4f1;
+}
+
+.list-info-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+  padding: 15px 0 19px;
+  border-radius: 5px;
+}
+
+.list-info-desktop {
+  display: none;
+}
+
+.list-info-mobile-light {
+  background: #ffffff;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+}
+
+.list-info-mobile-dark {
+  background: #25273d;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+}
+
+.list-filter {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.194444px;
+}
+
+.list-filter-light {
+  color: #9495a5;
+}
+
+.list-filter-light:hover {
+  cursor: pointer;
+  color: #494c6b;
+}
+
+.list-filter-dark {
+  color: #5b5e7e;
+}
+
+.list-filter-dark:hover {
+  cursor: pointer;
+  color: #e3e4f1;
+}
+
+@media (min-width: 1440px) {
+  .todo-list-info {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.194444px;
+    padding: 16px 24px 20px 24px;
+  }
+
+  .list-item {
+    padding: 20px 24px;
+  }
+
+  .completed-checker {
+    width: 24px;
+    height: 24px;
+  }
+
+  .list-info-mobile {
+    display: none;
+  }
+
+  .list-info-desktop {
+    display: flex;
+    gap: 19px;
+  }
+}

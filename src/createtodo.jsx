@@ -11,6 +11,14 @@ function CreateToDo(props) {
           width: "20px",
           height: "20px",
           borderRadius: "50%",
+          background: props.markCompleted
+            ? "url('./src/assets/images/icon-check.svg') no-repeat  center,  linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)"
+            : null,
+        }}
+        onClick={() => {
+          props.markCompleted
+            ? props.setMarkCompleted(false)
+            : props.setMarkCompleted(true);
         }}
       ></label>
       <input
@@ -18,15 +26,27 @@ function CreateToDo(props) {
         id="create"
         className={props.mode ? "create-light" : "create-dark"}
         placeholder="Create a new todo…"
-        value={"Currently typing"}
         style={{
           border: "none",
           fontFamily: "Josefin Sans",
-          fontWeight: 400,
-          fontSize: "12px",
-          lineHeight: "12px",
-          letterSpacing: "-0.166667px",
+
           outline: "none",
+        }}
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            props.setTodo([
+              ...props.todo,
+              {
+                text: event.target.value,
+                done: props.markCompleted,
+                id: Date.now(),
+              },
+            ]);
+            props.setMarkCompleted(false);
+
+            console.log(props.todo);
+            event.target.value = "";
+          }
         }}
       />
     </div>
@@ -34,3 +54,8 @@ function CreateToDo(props) {
 }
 
 export default CreateToDo;
+
+/*onKeyDown={(event) => {
+          if (event.key === "Enter") {
+          }
+        }}*/

@@ -12,11 +12,13 @@
   flex-direction: column;
 
   height: 100%;
+  padding: 0 24px;
 }
 
 .light {
   background-color: #fafafa;
   background-image: url("./assets/images/bg-mobile-light.jpg");
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position-x: center;
 }
@@ -24,6 +26,21 @@
 .dark {
   background-color: #171823;
   background-image: url("./assets/images/bg-mobile-dark.jpg");
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position-x: center;
+}
+
+@media (min-width: 1440px) {
+  .App {
+    padding: 0 450px;
+  }
+
+  .light {
+    background-image: url("./assets/images/bg-desktop-light.jpg");
+  }
+
+  .dark {
+    background-image: url("./assets/images/bg-desktop-dark.jpg");
+  }
 }

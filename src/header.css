@@ -1,0 +1,21 @@
+.header {
+  margin-top: 48px;
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 12px;
+}
+
+@media (min-width: 1440px) {
+  .header {
+    margin-top: 70px;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 15px;
+  }
+}

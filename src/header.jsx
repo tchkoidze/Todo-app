@@ -1,3 +1,5 @@
+import "./header.css";
+
 function Header(props) {
   return (
     <div
@@ -5,16 +7,12 @@ function Header(props) {
       style={{
         display: "flex",
         justifyContent: "space-between",
-
-        padding: "48px 24px 0 24px",
       }}
     >
       <h1
         style={{
           fontWeight: 700,
-          fontSize: "20px",
-          lineHeight: "20px",
-          letterSpacing: "12px",
+
           color: "#FFFFFF",
         }}
       >
