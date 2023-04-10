@@ -57,7 +57,7 @@
 }
 
 .completed-checker:hover {
-  border-image: linear-gradient(#f6b73c, #4d9f0c) 30/2px;
+  border: 1px solid #c058f3;
 }
 
 .completed-checker-light {
@@ -121,6 +121,10 @@
 
 .list-filter-light {
   color: #9495a5;
+}
+
+.active-selector {
+  color: #3a7cfd;
 }
 
 .list-filter-light:hover {

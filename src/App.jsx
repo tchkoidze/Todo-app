@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
 import Header from "./header";
 import CreateToDo from "./createtodo";
@@ -8,9 +8,18 @@ function App() {
   const [mode, setMode] = useState(true);
   const [todo, setTodo] = useState([]);
   const [completed, setCompleted] = useState(false);
+  const [clicked, setClicked] = useState("All");
 
-  console.log(mode);
-  console.log(todo);
+  const actives = todo.filter((z) => !z.done);
+  const complete = todo.filter((m) => m.done);
+  const newArray =
+    clicked == "All"
+      ? todo
+      : clicked == "Active"
+      ? actives
+      : clicked == "Completed"
+      ? complete
+      : undefined;
 
   return (
     <div className={`App ${mode ? "light" : "dark"} `}>
@@ -25,9 +34,11 @@ function App() {
       ></CreateToDo>
       <ToDoList
         mode={mode}
-        todo={todo}
+        todo={newArray}
+        clicked={clicked}
         setMode={setMode}
         setTodo={setTodo}
+        setClicked={setClicked}
       ></ToDoList>
     </div>
   );

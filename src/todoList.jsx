@@ -28,6 +28,7 @@ function ToDoList(props) {
                   : item.done
                   ? "#4D5067"
                   : null,
+                textDecorationLine: item.done ? "line-through" : null,
               }}
               key={item.id}
             >
@@ -99,22 +100,30 @@ function ToDoList(props) {
             <p
               className={`list-filter ${
                 props.mode ? "list-filter-light" : "list-filter-dark"
-              }`}
-              onClick={(e) => (e.target.style.color = "blue")}
+              } ${props.clicked == "All" ? "active-selector" : null}`}
+              onClick={() => {
+                props.setClicked("All");
+              }}
             >
               All
             </p>
             <p
               className={`list-filter ${
                 props.mode ? "list-filter-light" : "list-filter-dark"
-              }`}
+              } ${props.clicked == "Active" ? "active-selector" : null}`}
+              onClick={(e) => {
+                props.setClicked("Active");
+              }}
             >
               Active
             </p>
             <p
               className={`list-filter ${
                 props.mode ? "list-filter-light" : "list-filter-dark"
-              }`}
+              } ${props.clicked == "Completed" ? "active-selector" : null}`}
+              onClick={() => {
+                props.setClicked("Completed");
+              }}
             >
               Completed
             </p>
@@ -140,21 +149,30 @@ function ToDoList(props) {
         <p
           className={`list-filter ${
             props.mode ? "list-filter-light" : "list-filter-dark"
-          }`}
+          } ${props.clicked == "All" ? "active-selector" : null}`}
+          onClick={() => {
+            props.setClicked("All");
+          }}
         >
           All
         </p>
         <p
           className={`list-filter ${
             props.mode ? "list-filter-light" : "list-filter-dark"
-          }`}
+          } ${props.clicked == "Active" ? "active-selector" : null}`}
+          onClick={(e) => {
+            props.setClicked("Active");
+          }}
         >
           Active
         </p>
         <p
           className={`list-filter ${
             props.mode ? "list-filter-light" : "list-filter-dark"
-          }`}
+          } ${props.clicked == "Completed" ? "active-selector" : null}`}
+          onClick={() => {
+            props.setClicked("Completed");
+          }}
         >
           Completed
         </p>

@@ -26,6 +26,7 @@ function Header(props) {
       >
         {props.mode ? (
           <svg
+            className="header-svg"
             xmlns="http://www.w3.org/2000/svg"
             width="19"
             height="20"
@@ -39,6 +40,7 @@ function Header(props) {
           </svg>
         ) : (
           <svg
+            className="header-svg"
             xmlns="http://www.w3.org/2000/svg"
             width="19"
             height="20"
