@@ -72,6 +72,11 @@ function ToDoList(props) {
                     (x) => x.id !== item.id
                   );
                   props.setTodo(newnTodoLst);
+
+                  const filteredToDoList = props.allToDo.filter(
+                    (x) => x.id !== item.id
+                  );
+                  props.setAllToDo(filteredToDoList);
                 }}
               >
                 <path

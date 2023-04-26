@@ -9,6 +9,7 @@ function App() {
   const [todo, setTodo] = useState([]);
   const [completed, setCompleted] = useState(false);
   const [clicked, setClicked] = useState("All");
+  const [allToDo, setAllToDo] = useState([]);
 
   const actives = todo.filter((z) => !z.done);
   const complete = todo.filter((m) => m.done);
@@ -20,6 +21,8 @@ function App() {
       : clicked == "Completed"
       ? complete
       : undefined;
+
+  console.log(newArray);
 
   return (
     <div className={`App ${mode ? "light" : "dark"} `}>
@@ -35,10 +38,12 @@ function App() {
       <ToDoList
         mode={mode}
         todo={newArray}
+        allToDo={todo}
         clicked={clicked}
         setMode={setMode}
         setTodo={setTodo}
         setClicked={setClicked}
+        setAllToDo={setTodo}
       ></ToDoList>
     </div>
   );
