@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./header";
 import CreateToDo from "./createtodo";
 import ToDoList from "./todoList";
+import axios from "axios";
 
 function App() {
   const [mode, setMode] = useState(true);
@@ -11,6 +12,43 @@ function App() {
   const [clicked, setClicked] = useState("All");
   const [allToDo, setAllToDo] = useState([]);
 
+  {
+    /*const createTodo = async () => {
+    try {
+      const response = await axios.post(
+        "https://todolist-api-production.up.railway.app/api/todo/add",
+        {
+          done: false,
+          todo: "make differenceto my life boy",
+        }
+      );
+      const data = await response.data;
+      console.log(data);
+    } catch (error) {}
+  };
+  createTodo();
+
+  const getRequestTodo = async () => {
+    try {
+      const response = await axios.get(
+        "https://todolist-api-production.up.railway.app/api/todo"
+      );
+      const data = await response.data;
+      console.log(data);
+      //setQuote(data);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+  getRequestTodo();
+  
+  const deleteTodo = async (id) => {
+    axios.delete(
+      `https://todolist-api-production.up.railway.app/api/delete/${id}`
+    );
+  };
+*/
+  }
   const actives = todo.filter((z) => !z.done);
   const complete = todo.filter((m) => m.done);
   const newArray =

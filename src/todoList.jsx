@@ -60,7 +60,7 @@ function ToDoList(props) {
                     props.setTodo(checkComplitness);
                   }}
                 ></div>{" "}
-                <p className="todo-txt">{item.text}</p>
+                <p className="todo-txt">{item.todo}</p>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

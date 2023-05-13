@@ -1,6 +1,26 @@
 import "./createtodo.css";
+import axios from "axios";
 
 function CreateToDo(props) {
+  const addTodo = async () => {
+    console.log(999);
+    try {
+      const response = await axios.post(
+        "https://todolist-api-production.up.railway.app/api/todo/add",
+        {
+          done: props.markCompleted,
+          todo: event.target.value,
+        }
+      );
+      const data = await response.data;
+      props.setTodo([...props.todo, data]);
+
+      console.log(data);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
   return (
     <div className={`create-todo-box ${props.mode ? null : "dark-box"} `}>
       <label
@@ -34,14 +54,18 @@ function CreateToDo(props) {
         }}
         onKeyDown={(event) => {
           if (event.key === "Enter") {
-            props.setTodo([
+            {
+              /*props.setTodo([
               ...props.todo,
               {
                 text: event.target.value,
                 done: props.markCompleted,
                 id: Date.now(),
               },
-            ]);
+            ]);*/
+            }
+            console.log(77);
+            addTodo();
             props.setMarkCompleted(false);
 
             console.log(props.todo);
