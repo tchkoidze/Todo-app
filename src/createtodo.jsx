@@ -2,14 +2,14 @@ import "./createtodo.css";
 import axios from "axios";
 
 function CreateToDo(props) {
-  const addTodo = async () => {
+  const addTodo = async (e) => {
     console.log(999);
     try {
       const response = await axios.post(
         "https://todolist-api-production.up.railway.app/api/todo/add",
         {
           done: props.markCompleted,
-          todo: event.target.value,
+          todo: e.target.value,
         }
       );
       const data = await response.data;
@@ -65,7 +65,7 @@ function CreateToDo(props) {
             ]);*/
             }
             console.log(77);
-            addTodo();
+            addTodo(event);
             props.setMarkCompleted(false);
 
             console.log(props.todo);
