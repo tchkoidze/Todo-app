@@ -1,8 +1,32 @@
 import "./todoList.css";
+import axios from "axios";
 
 function ToDoList(props) {
   //const items = props.todo;
   const keys = 0;
+
+  const deleteTodo = async (id) => {
+    axios.delete(
+      `https://todolist-api-production.up.railway.app/api/delete/${id}`
+    );
+  };
+
+  const updateTodo = async (id, check) => {
+    try {
+      const response = await axios.put(
+        `https://todolist-api-production.up.railway.app/api/update/${id}`,
+        {
+          done: !check,
+        }
+      );
+      const data = await response.data;
+      //props.setTodo([...props.todo, data]);
+
+      console.log(`updated: ${response.data}`);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
 
   return (
     <div
@@ -47,6 +71,7 @@ function ToDoList(props) {
                       : null,
                   }}
                   onClick={() => {
+                    updateTodo(item.id, item.done);
                     const checkComplitness = [...props.todo].map((y) => {
                       if (y.id === item.id) {
                         return {
@@ -77,6 +102,7 @@ function ToDoList(props) {
                     (x) => x.id !== item.id
                   );
                   props.setAllToDo(filteredToDoList);
+                  deleteTodo(item.id);
                 }}
               >
                 <path

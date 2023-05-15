@@ -78,8 +78,3 @@ function CreateToDo(props) {
 }
 
 export default CreateToDo;
-
-/*onKeyDown={(event) => {
-          if (event.key === "Enter") {
-          }
-        }}*/
